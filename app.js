@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var PORT = process.env.PORT || 8080;
+var passport = require('./config/passport');
+var session = require('express-session');
 
 //import routers
 var indexRouter = require('./routes/index');
@@ -20,6 +22,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static('public'));
 
+
+//passport
+app.use(session({secret: "guineapigs"}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+//routes
 app.use(indexRouter);
 app.use(registrationRouter );
 app.use(signinRouter);
