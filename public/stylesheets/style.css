@@ -2,8 +2,7 @@ a {
     color: #00B7FF;
 }
 
-#signinForm,
-#registerForm {
+form {
     padding-top: 30px;
     width: 50%;
     margin: 0 auto;
