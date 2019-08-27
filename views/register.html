@@ -12,6 +12,10 @@
 
 <body>
     <div class="container">
+        <h3 id="registerPageH3">Sign Up</h3>
+        <p id="registerPageP">Already a member?
+            <a href="/signin">Sign in</a>
+        </p>
         <form action="/api/registration" method="post" id="registerForm">
             <div class="form-group">
                 <input type="text" class="form-control" name="registerName" aria-describedby="emailHelp" placeholder="Name">
@@ -23,9 +27,11 @@
                 <input type="email" class="form-control" name="registerEmail" aria-describedby="emailHelp" placeholder="Email">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" name="registerPassword" placeholder="Password">
+                <input type="password" class="form-control" name="registerPassword" placeholder="Password (8+ characters)">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div id="btn-container" class="container">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
         </form>
 
     </div>

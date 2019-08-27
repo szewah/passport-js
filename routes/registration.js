@@ -18,7 +18,7 @@ router.post('/api/registration', async (req, res, err) => {
     password: req.body.registerPassword
   }).then((results) => {
       console.log("These are the results: " + results + " after being inserted to the database");
-      res.redirect('/');
+      res.redirect('/home');
   }).catch((err) => {
     res.json(err);
     console.log("Another error occured");

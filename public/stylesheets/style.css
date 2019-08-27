@@ -7,3 +7,18 @@ form {
     width: 50%;
     margin: 0 auto;
 }
+
+#registerPageH3,
+#registerPageP,
+#signinPageH3,
+#signinPageP,
+#forgetPasswordP {
+    padding-top: 30px;
+    text-align: center;
+}
+
+#btn-container {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}

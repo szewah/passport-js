@@ -13,14 +13,21 @@
 
 <body>
     <div class="container">
-        <form action="/signin" method="post" id="signinForm">
+        <h3 id="signinPageH3">Sign In</h3>
+        <p id="signinPageP">New to Passport?
+            <a href="/registration">Sign up for free</a>
+        </p>
+        <form action="/api/signin" method="post" id="signinForm">
             <div class="form-group">
                 <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
             </div>
             <div class="form-group">
                 <input type="password" class="form-control" name="password1" placeholder="Password">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div id="btn-container" class="container">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <p id="forgetPasswordP">Forgot your password?</p>
         </form>
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
