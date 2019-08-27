@@ -7,10 +7,6 @@ var PORT = process.env.PORT || 8080;
 var passport = require('./config/passport');
 var session = require('express-session');
 
-//import routers
-var indexRouter = require('./routes/index');
-var registrationRouter = require('./routes/registration');
-var signinRouter = require('./routes/signin');
 
 //initiate express
 var app = express();
@@ -22,16 +18,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static('public'));
 
-
 //passport
 app.use(session({secret: "guineapigs"}));
 app.use(passport.initialize());
 app.use(passport.session());
 
 //routes
-app.use(indexRouter);
-app.use(registrationRouter );
-app.use(signinRouter);
+require('./routes/index')(app);
+require('./routes/registration')(app);
+require('./routes/login')(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
