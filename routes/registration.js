@@ -10,14 +10,14 @@ router.get('/registration', function(req, res, next) {
 
 router.post('/api/registration', async (req, res, err) => {
   if (err) {console.log("error occurred")};
-  console.log("This is the response body" + req.body);
+  console.log(req.body);
   db.User.create({
     firstname: req.body.registerName,
     lastName: req.body.registerSurname,
     email: req.body.registerEmail,
     password: req.body.registerPassword
   }).then((results) => {
-      console.log("These are the results: " + results + "after being inserted to the database");
+      console.log("These are the results: " + results + " after being inserted to the database");
       res.redirect('/');
   }).catch((err) => {
     res.json(err);
