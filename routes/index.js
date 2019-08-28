@@ -3,6 +3,9 @@ var isAuthenticated = require ('../config/isAuthenticated');
 
 
 module.exports = function(app) {
+  app.get('/', function(req, res) {
+    res.redirect('/home');
+  })
   /* GET home page. */
   //If user is logged in than they will reach the home page
   app.get('/home', isAuthenticated, function(req, res) {
