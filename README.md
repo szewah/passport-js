@@ -8,7 +8,7 @@ A simple app using Passport.js local-strategy to authenticate a user at login
 - heroku: https://nameless-journey-28272.herokuapp.com/
 
 
-## Getting Started
+## Installing
 Download the file, then..
 
 ```
