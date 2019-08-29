@@ -15,9 +15,9 @@ module.exports = function(app) {
       lastName: req.body.registerSurname,
       email: req.body.registerEmail,
       password: req.body.registerPassword
-    }).then((results) => {
-        console.log("These are the results: " + results);
-        res.redirect('/api/login');
+    }).then(() => {
+      console.log("YES IT WAS CREATED");
+        res.redirect('/login');
     }).catch((err) => {
       res.json(err);
     });

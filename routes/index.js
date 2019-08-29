@@ -3,18 +3,19 @@ var isAuthenticated = require ('../config/isAuthenticated');
 
 
 module.exports = function(app) {
-  app.get('/', function(req, res) {
+  /* GET home page. */
+  app.get('/', (req, res) => {
     res.redirect('/home');
   })
-  /* GET home page. */
   //If user is logged in than they will reach the home page
-  app.get('/home', isAuthenticated, function(req, res) {
+  app.get('/home', isAuthenticated, function(req, res, next) {
     res.sendFile(path.join(__dirname, "../views/index.html"))
   });
 
   app.get('/logout', (req, res) => {
     req.logout();
-    res.redirect("/login");
+    req.session.destroy();
+    return res.redirect("/login");
   })
 
 };

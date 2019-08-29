@@ -13,10 +13,20 @@ module.exports = function(app) {
     });
 
     /* POST login page email and password*/
-    app.post('/api/login', passport.authenticate('local'), function(req, res) {
-        res.json('/home');
+
+    app.post('/api/login', passport.authenticate('local', {
+        failureRedirect: '/login',
+        failureFlash: true
+    }), 
+    function (req, res) {
+        console.log('user', req.user);
+        res.redirect('/home');
     }
     );
 
+    // app.post('/api/login', function(req, res) {
+    //     console.log(req.body);
+    // })
+ 
 };
 
